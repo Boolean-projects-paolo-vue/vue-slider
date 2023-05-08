@@ -19,8 +19,8 @@
 			<div class="highlighted">
 				<div 
 					class="img_container" 
-					:class="index == activeIndex ? 'active' : ''"
 					v-for="(item, index) in arrImages"
+					:class="index == activeIndex ? 'active' : ''"
 					>
 					<img 
 						:src="item.image" 

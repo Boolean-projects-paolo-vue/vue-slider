@@ -48,7 +48,7 @@ const app = Vue.createApp({
     },
 	},
   created() {
-    setInterval(this.NextSlide, 3000)
+    setInterval(this.NextSlide, 2000)
   },
 });
 
