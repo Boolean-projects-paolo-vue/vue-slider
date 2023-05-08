@@ -27,9 +27,29 @@ const app = Vue.createApp({
       ],
     }
   },
-  methods:{
-
-  }
+  methods: {
+		PrevSlide() {
+			
+			this.activeIndex--;
+			if (this.activeIndex < 0) {
+				this.activeIndex = this.arrImages.length - 1;
+			}
+		},
+		NextSlide() {
+			
+			this.activeIndex++;
+			if (this.activeIndex >= this.arrImages.length) {
+				this.activeIndex = 0;
+			}
+		},
+    thumbs(index){
+      this.activeIndex = index;
+      console.log('immagine cliccata in posizione ' + index);
+    },
+	},
+  created() {
+    setInterval(this.NextSlide, 3000)
+  },
 });
 
 app.mount('.carousel')

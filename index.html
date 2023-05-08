@@ -17,22 +17,42 @@
 	<div class="container">
 		<div class="carousel">
 			<div class="highlighted">
-				<img 
-					v-for="(item, index) in arrImages" 
-					:key="item" 
-					:src="item.image" 
-					alt="" 
-					:class="(active: index == activeIndex)"
-				>
+				<div 
+					class="img_container" 
+					:class="index == activeIndex ? 'active' : ''"
+					v-for="(item, index) in arrImages"
+					>
+					<img 
+						:src="item.image" 
+						alt=""
+					>
+					<div class="text">
+						<h3> {{ item.title }} </h3>
+						<p> {{ item.text }} </p>
+					</div>
+				</div>
 			</div>
 
 			<!-- div con le miniature -->
 			<div class="thumbs">
 				<div class="controls">
-					<i class="bi bi-arrow-up-circle-fill btn btn-prev"></i>
-					<i class="bi bi-arrow-down-circle-fill btn btn-next"></i>
+					<i
+						class="bi bi-arrow-up-circle-fill btn btn-prev"
+						@click="PrevSlide"
+					></i>
+					<i
+						class="bi bi-arrow-down-circle-fill btn btn-next"
+						@click="NextSlide"
+					></i>
 				</div>
-				
+				<img
+					@click="thumbs(index)"
+					v-for="(item, index) in arrImages"
+					:key="item"
+					:src="item.image"
+					alt=""
+					:class="{active: index == activeIndex}"
+				>
 			</div>
 		</div>
 	</div>
