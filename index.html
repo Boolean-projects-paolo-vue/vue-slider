@@ -18,11 +18,11 @@
 		<div class="carousel">
 			<div class="highlighted">
 				<img 
-					v-for="(image, index) in arrImages" 
-					:key="image" 
-					:src="image" 
+					v-for="(item, index) in arrImages" 
+					:key="item" 
+					:src="item.image" 
 					alt="" 
-					class="active"
+					:class="(active: index == activeIndex)"
 				>
 			</div>
 
