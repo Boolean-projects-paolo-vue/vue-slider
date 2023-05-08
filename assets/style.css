@@ -1,0 +1,111 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.carousel {
+	display: flex;
+	width: 1200px;
+	max-width: 100%;
+	height: 1100px;
+	max-height: 80vh;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+
+.controls{
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.btn {
+    font-size: 2rem;
+    z-index: 1000;
+    color: lightgrey;
+    background-color: black;
+}
+
+
+
+.highlighted {
+	height: 100%;
+	width: 80%;
+}
+
+.highlighted .img_container img {
+	width: 100%;
+	height: 100%;
+	object-fit:fill;
+}
+
+.highlighted .img_container {
+    display: none;
+}
+
+.highlighted .img_container.active {
+    display: block !important;
+}
+
+
+
+.thumbs {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 20%;
+}
+
+.thumbs img {
+	flex: 1 0 0;
+	display: block;
+	width: 100%;
+	height: 0;
+	object-fit: cover;
+	filter: brightness(.3);
+}
+
+.thumbs .active {
+	filter: brightness(1);
+	border: 5px solid lightgrey;
+}
+
+
+
+.img_container {
+    width: 100%;
+	height: 100%;
+    position: relative;
+}
+
+.title {
+    color:crimson;
+    position: absolute;
+    right: 2%;
+    bottom: 12.5%;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    border-style:double;
+    font-weight: 700;
+}
+
+.text {
+    color: rgb(255, 255, 255);
+    position: absolute;
+    left: 20%;
+    right: 2%;
+    bottom: 4.5%;
+    text-align: right;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
